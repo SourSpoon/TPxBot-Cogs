@@ -3,10 +3,9 @@ import discord
 from testtokens import token
 
 tpx = commands.Bot(command_prefix='!')
-# tpx.remove_command('help')
-description = 'this thing'
+description = 'I am a bot built for TPx, I am here to help you with RS and TPx related info. Made by and hosted' \
+              'by Spoon'
 startup_extensions = ['cogs.general', 'cogs.queue', 'cogs.mod']
-
 
 
 @tpx.event
