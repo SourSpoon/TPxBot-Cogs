@@ -2,6 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*tokens.py
+.idea
+testtokens.py
+livetokens.py
+
 
 # C extensions
 *.so
