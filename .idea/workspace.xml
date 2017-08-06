@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2139e3ad-aec9-4d21-a2c3-379a1c976bbb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cogs/general.py" afterPath="$PROJECT_DIR$/cogs/general.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cogs/mod.py" afterPath="$PROJECT_DIR$/cogs/mod.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/reference.json" afterPath="$PROJECT_DIR$/data/reference.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/small.json" afterPath="$PROJECT_DIR$/data/small.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cogs/admin.py" afterPath="$PROJECT_DIR$/cogs/admin.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +18,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-706">
+            <state relative-caret-position="102">
               <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -54,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reference.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reference.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/reference.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -64,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cogs/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="731">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -91,8 +88,8 @@
       <file leaf-file-name="mod.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cogs/mod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="83" lean-forward="false" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
+            <state relative-caret-position="-1377">
+              <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="58" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -133,12 +130,12 @@
         <option value="$PROJECT_DIR$/cogs/queue.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/cogs/admin.py" />
         <option value="$PROJECT_DIR$/data/small.json" />
         <option value="$PROJECT_DIR$/testtokens.py" />
         <option value="$PROJECT_DIR$/cogs/mod.py" />
         <option value="$PROJECT_DIR$/data/reference.json" />
         <option value="$PROJECT_DIR$/cogs/general.py" />
+        <option value="$PROJECT_DIR$/cogs/admin.py" />
       </list>
     </option>
   </component>
@@ -410,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501984550777</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added admin">
+      <created>1501984950763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1501984950763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -747,16 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cogs/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testtokens.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -765,31 +759,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cogs/mod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="83" lean-forward="false" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/small.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-706">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,6 +792,36 @@
         <state relative-caret-position="0">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cogs/mod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cogs/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

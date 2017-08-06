@@ -27,6 +27,7 @@ class Admin:
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def init_ref(self, ctx):
+        """sets reference data blank"""
         ref = {'commands': ''}
         functions.init_reference(ref)
         await ctx.send('Reference Initialised')
@@ -39,8 +40,10 @@ class Admin:
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def init_queue(self, ctx):
+        """clears all queues"""
         boss_list = ['bandos', 'sara', 'arma', 'zammy', 'raids', 'corp', 'dks']
         functions.init_queues(data_dict['queues'], boss_list)
+        await ctx.send('All queues cleared')
 
     @init_queue.error
     async def init_queue_error(self, ctx, error):
