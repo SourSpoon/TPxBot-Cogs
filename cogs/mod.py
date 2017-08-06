@@ -16,7 +16,6 @@ class Mod:
         functions.rewrite_json(data_dict['small'], keys['small'][1], message)
         await ctx.send('Event set!')
         await ctx.send(functions.recall_json(data_dict['small'], keys['small'][1]))
-        await ctx.send('not allowed here')
 
     @setevent.error
     async def setevent_error(self, ctx, error):

@@ -35,14 +35,11 @@ class General:
         embed.set_footer(text="Team Paradox", icon_url="http://team-paradox.com/favicon.ico")
         await ctx.send(content="Summary of TPx Rules", embed=embed)
 
-    # @commands.command(name='help')
-    # async def help_(self, ctx):
-    #     await ctx.send('<https://github.com/SourSpoon/TeamParadoxDiscordBot#commands>')
 
-    @commands.command()
-    async def about(self, ctx):
-        """Brings up github page on TPx Bot"""
-        await ctx.send(functions.recall_json(data_dict['reference'], keys['commands']))
+    # @commands.command()
+    # async def about(self, ctx):
+    #     """Brings up github page on TPx Bot"""
+    #     await ctx.send(functions.recall_json(data_dict['reference'], keys["commands"]))
 
     @commands.command()
     async def app(self, ctx):
