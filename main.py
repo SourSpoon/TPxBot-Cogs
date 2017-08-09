@@ -21,8 +21,6 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-    if message.author == tpx.user:
-        return
     await tpx.process_commands(message)
 
 

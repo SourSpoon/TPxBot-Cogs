@@ -35,7 +35,6 @@ class General:
         embed.set_footer(text="Team Paradox", icon_url="http://team-paradox.com/favicon.ico")
         await ctx.send(content="Summary of TPx Rules", embed=embed)
 
-
     # @commands.command()
     # async def about(self, ctx):
     #     """Brings up github page on TPx Bot"""

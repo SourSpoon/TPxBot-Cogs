@@ -117,6 +117,6 @@ def punish(target, punishment, executioner, reason):
         em_colour = 0x00FAFF
     embed = discord.Embed(colour=discord.Colour(em_colour), description=f"Punished: {target}\nAction: {punishment}"
                                                                         f"\nReason: {reason}",
-                          timestamp=datetime.datetime.now())
+                          timestamp=datetime.datetime.utcnow())
     embed.set_author(name=executioner, icon_url=executioner.avatar_url)
     return embed
