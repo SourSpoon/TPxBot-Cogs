@@ -5,7 +5,7 @@ from testtokens import token
 tpx = commands.Bot(command_prefix='!')
 description = 'I am a bot built for TPx, I am here to help you with RS and TPx related info. Made by and hosted' \
               'by Spoon'
-startup_extensions = ['cogs.general', 'cogs.queue', 'cogs.mod']
+startup_extensions = ['cogs.general', 'cogs.queue', 'cogs.mod', 'cogs.exchange']
 
 
 @tpx.event

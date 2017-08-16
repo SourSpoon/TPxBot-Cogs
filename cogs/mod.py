@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from livetokens import admin_channel_id
+from testtokens import admin_channel_id
 import functions
 from functions import data_dict, keys
 
