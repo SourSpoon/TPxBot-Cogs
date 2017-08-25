@@ -21,10 +21,11 @@ class Queue:
     async def queue(self, ctx):
         """Has subcommands use !help queue for more details."""
         if ctx.invoked_subcommand is None:
-            await ctx.send('Invalid Queue command')
+            await ctx.invoke(self.bot.get_command("help"), "queue")
 
     @queue.command()
     async def arma(self, ctx):
+        """Adds you to the Armadyl Queue"""
         full, list_ = functions.append_queue(arma, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Armadyl')
@@ -33,6 +34,7 @@ class Queue:
 
     @queue.command()
     async def bandos(self, ctx):
+        """Adds you to the Bandos Queue"""
         full, list_ = functions.append_queue(bandos, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Bandos')
@@ -41,6 +43,7 @@ class Queue:
 
     @queue.command()
     async def sara(self, ctx):
+        """Adds you to the Saradomin Queue"""
         full, list_ = functions.append_queue(sara, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Saradomin')
@@ -49,6 +52,7 @@ class Queue:
 
     @queue.command()
     async def zammy(self, ctx):
+        """Adds you to the Zammorak Queue"""
         full, list_ = functions.append_queue(zammy, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Zammy')
@@ -57,6 +61,7 @@ class Queue:
 
     @queue.command()
     async def dks(self, ctx):
+        """Adds you to the Dagannoth Kings Queue"""
         full, list_ = functions.append_queue(dks, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Dagannoth Kings')
@@ -65,6 +70,7 @@ class Queue:
 
     @queue.command()
     async def corp(self, ctx):
+        """Adds you to the Corporeal Beast Queue"""
         full, list_ = functions.append_queue(corp, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to kill Corporeal Beast')
@@ -73,6 +79,7 @@ class Queue:
 
     @queue.command(aliases=['raids'])
     async def raid(self, ctx):
+        """Adds you to the Raids/ Chambers of Xeric Queue"""
         full, list_ = functions.append_queue(raids, ctx.author.mention)
         if full is True:
             await ctx.send(f'{list_[0]} & {list_[1]} are ready to Raid the Chambers Of Xeric')
@@ -81,11 +88,13 @@ class Queue:
 
     @queue.command(aliases=['remove'])
     async def rem(self, ctx):
+        """Removes you from all queues"""
         functions.remove_from_queue(ctx.author.mention)
         await ctx.message.add_reaction('\N{White Heavy Check Mark}')
 
     @queue.command()
     async def status(self, ctx):
+        """Shows how many people are in each queue"""
         status_d = functions.get_queue_info()
         await ctx.send("```"
                        f"dks has {status_d['dks']} player(s) in the queue \n"
