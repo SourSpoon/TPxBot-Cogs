@@ -9,11 +9,11 @@ class Mod:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    @commands.has_permissions(manage_messages=True)
-    @commands.guild_only()
-    async def purge(self, ctx, mention, *, reason: str=None):
-        """Deletes the last 20 messages from mentioned user"""
+    # @commands.command()
+    # @commands.has_permissions(manage_messages=True)
+    # @commands.guild_only()
+    # async def purge(self, ctx, mention, *, reason: str=None):
+    #     """Deletes the last 20 messages from mentioned user"""
 
 
     @commands.command()

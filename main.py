@@ -1,6 +1,6 @@
 from discord.ext import commands
 import discord
-from testtokens import token
+from livetokens import token
 
 tpx = commands.Bot(command_prefix='!')
 description = 'I am a bot built for TPx, I am here to help you with RS and TPx related info. Made by and hosted' \
@@ -25,7 +25,7 @@ async def on_message(message):
 
 
 @tpx.command(hidden=True)
-@commands.has_permissions(administrator=True)
+@commands.is_owner()
 async def load(ctx, extension_name: str):
     """Loads an extension."""
     try:
@@ -45,7 +45,7 @@ async def load_error(ctx, error):
 
 
 @tpx.command(hidden=True)
-@commands.has_permissions(administrator=True)
+@commands.is_owner()
 async def unload(ctx, extension_name: str):
     """Unloads an extension."""
     tpx.unload_extension(extension_name)

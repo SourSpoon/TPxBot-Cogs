@@ -116,5 +116,20 @@ class General:
         await ctx.send(embed=embed)
 
 
+
+    @commands.command()
+    async def info(self, ctx):
+        """Displays info about the bot"""
+        embed = discord.Embed(title="Team Paradox Bot",
+                              colour=discord.Colour(0x00aa08),
+                              url="https://github.com/SourSpoon/TPxBot-Cogs",
+                              description="A discord bot written in Python 3, with the aid of the discord.py library."
+                                          "\nWritten & Hosted by <@120636888418615300>/ Spoon#7805"
+                                          "\n[GitHub](https://github.com/SourSpoon/TPxBot-Cogs)")
+
+        embed.set_footer(text="\N{SPOON} Sour Spoon")
+        await ctx.send(embed=embed)
+
+
 def setup(bot):
     bot.add_cog(General(bot))
