@@ -1,44 +1,50 @@
 from discord.ext import commands
 import discord
-import datetime
-import aiohttp
+import async_timeout
 import json
-
-
-def _read_json(item):
-    with open('data/items.json', 'r') as doc:
-        data = json.load(doc)
-        if item in data:
-            item_id = data[item]["id"]
-            return item_id
-        return None
 
 
 class Exchange:
     def __init__(self, bot):
         self.bot = bot
+        self.session = bot.session
+        self.rsb_api = 'https://api.rsbuddy.com/grandExchange?a=guidePrice&i='
+
+    async def _fetch(self, url):
+        with async_timeout.timeout(10):
+            async with self.session.get(url) as resp:
+                return await resp.json()
+
+    async def _build_url(self, item):
+        with open('data/item.json') as file:
+            item_db = json.load(file)
+            item = item.lower()
+            if item in item_db:
+                item_id = item_db[item]['id']
+                url = (1, self.rsb_api + item_id)
+                return url
+            else:
+                failed = (0, "failed")
+                return failed
 
     @commands.command()
-    async def price(self, ctx, *, item: str):
-        message = await ctx.send('Fetching price')
-        item = item.lower()
-        item_id = _read_json(item)
-        if item_id is None:
-            await message.edit(content='Item not found')
-            return
-        async with aiohttp.ClientSession() as session:
-            async with session.get(f"https://api.rsbuddy.com/grandExchange",
-                                   params=f"a=guidePrice&i={item_id}") as price_data:
-                content = (await price_data.json())
-        embed = discord.Embed()
-        embed.colour = discord.Colour(0x14d2fd)
-        embed.title = item.title()
-        embed.url = f"https://rsbuddy.com/exchange?id={item_id}"
-        embed.add_field(name="Buying Price", value="{:,}gp".format(content["buying"]))
-        embed.add_field(name="Selling Price", value="{:,}gp".format(content["selling"]))
-        embed.add_field(name="Buying Quantity", value="{:,}/hr".format(content["buyingQuantity"]))
-        embed.add_field(name="Selling Quantity", value="{:,}/hr".format(content["sellingQuantity"]))
-        await message.edit(embed=embed)
+    async def price(self, ctx, *, item):
+        """looks up price of item against RSBuddy Exchange"""
+        status, url = await self._build_url(item)
+        if status == 0:
+            return await ctx.send(f"unable to find item: {item}")
+        content = await self._fetch(url)
+
+        # build embed
+        em = discord.Embed()
+        em.colour = discord.Colour(0x13c116)
+        em.title = item.title()
+        em.url = url
+        em.add_field(name="Buying Price", value="{:,}gp".format(content["buying"]))
+        em.add_field(name="Selling Price", value="{:,}gp".format(content["selling"]))
+        em.add_field(name="Buying Quantity", value="{:,}/hr".format(content["buyingQuantity"]))
+        em.add_field(name="Selling Quantity", value="{:,}/hr".format(content["sellingQuantity"]))
+        await ctx.send(embed=em)
 
 
 def setup(bot):
