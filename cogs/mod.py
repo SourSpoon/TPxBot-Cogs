@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from testtokens import admin_channel_id
+from livetokens import admin_channel_id
 import functions
 from functions import data_dict, keys
 
@@ -8,13 +8,6 @@ from functions import data_dict, keys
 class Mod:
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command()
-    @commands.has_permissions(manage_messages=True)
-    @commands.guild_only()
-    async def purge(self, ctx, mention, *, reason: str=None):
-        """Deletes the last 20 messages from mentioned user"""
-
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
@@ -26,7 +19,7 @@ class Mod:
 
     @setevent.error
     async def setevent_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
+        if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
     @commands.command()
@@ -39,7 +32,7 @@ class Mod:
 
     @setitem.error
     async def setitem_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
+        if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
     @commands.command()
@@ -55,7 +48,7 @@ class Mod:
 
     @kick.error
     async def kick_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
+        if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
     @commands.command()
@@ -71,7 +64,7 @@ class Mod:
 
     @ban.error
     async def ban_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
+        if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
     @commands.command()
@@ -88,7 +81,7 @@ class Mod:
 
     @soft.error
     async def soft_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
+        if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
 

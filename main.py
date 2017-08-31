@@ -1,11 +1,14 @@
 from discord.ext import commands
 import discord
+import aiohttp
 from testtokens import token
 
 tpx = commands.Bot(command_prefix='!')
 description = 'I am a bot built for TPx, I am here to help you with RS and TPx related info. Made by and hosted' \
               'by Spoon'
 startup_extensions = ['cogs.general', 'cogs.queue', 'cogs.mod', 'cogs.exchange']
+
+tpx.session = aiohttp.ClientSession(loop=tpx.loop)
 
 
 @tpx.event
@@ -40,7 +43,7 @@ async def load(ctx, extension_name: str):
 
 @load.error
 async def load_error(ctx, error):
-    if isinstance(error, discord.ext.commands.errors.CheckFailure):
+    if isinstance(error, commands.errors.CheckFailure):
         await ctx.message.add_reaction('\N{Cross Mark}')
 
 
@@ -54,7 +57,7 @@ async def unload(ctx, extension_name: str):
 
 @unload.error
 async def unload_error(ctx, error):
-    if isinstance(error, discord.ext.commands.errors.CheckFailure):
+    if isinstance(error, commands.errors.CheckFailure):
         await ctx.message.add_reaction('\N{Cross Mark}')
 
 
