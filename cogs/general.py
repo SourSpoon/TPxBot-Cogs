@@ -56,7 +56,7 @@ class General:
         """Current Item of the Week"""
         await ctx.send(functions.recall_json(data_dict['small'], keys['small'][0]))
 
-    @commands.command()
+    @commands.command(aliases=['rotation'])
     async def rotations(self, ctx):
         """Shows raids rotations"""
         await ctx.send('https://i.gyazo.com/d303883c8f2ef2a5679dc7f28ef0b800.png')
