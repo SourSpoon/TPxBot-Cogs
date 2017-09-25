@@ -21,7 +21,6 @@ class Admin:
 
     @init_small.error
     async def init_small_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
         if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 
@@ -35,7 +34,6 @@ class Admin:
 
     @init_ref.error
     async def init_ref_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.errors.CheckFailure):
         if isinstance(error, commands.errors.CheckFailure):
             await ctx.message.add_reaction('\N{Cross Mark}')
 

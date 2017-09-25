@@ -130,6 +130,16 @@ class General:
         embed.set_footer(text="\N{SPOON} Sour Spoon")
         await ctx.send(embed=embed)
 
+    @commands.command(aliases=['hc'])
+    async def hotandcold(self, ctx):
+        """
+        Posts link to the Hot & Cold Map
+
+        Can also use hc
+        """
+        await ctx.send('<https://vignette.wikia.nocookie.net/2007scape/images/5/50/Strange_device_dig_locations.png'
+                       '/revision/latest?cb=20170711150204>')
+
 
 def setup(bot):
     bot.add_cog(General(bot))

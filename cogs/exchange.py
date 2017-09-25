@@ -15,7 +15,7 @@ class Exchange:
             async with self.session.get(url) as resp:
                 return await resp.json()
 
-    async def _build_url(self, item):
+    def _build_url(self, item):
         with open('data/item.json') as file:
             item_db = json.load(file)
             item = item.lower()
@@ -30,7 +30,7 @@ class Exchange:
     @commands.command()
     async def price(self, ctx, *, item):
         """looks up price of item against RSBuddy Exchange"""
-        status, url = await self._build_url(item)
+        status, url = self._build_url(item)
         if status == 0:
             return await ctx.send(f"unable to find item: {item}")
         content = await self._fetch(url)
